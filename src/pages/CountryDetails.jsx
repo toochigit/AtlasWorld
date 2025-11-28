@@ -21,11 +21,12 @@ function CountryDetails() {
                 return response.json();
             })
             .then((data) => {
-                if (!data || data.length === 0) {
+                if (!data) {
                     throw new Error('No data received for this country');
                 }
 
-                const countryData = data[0];
+                // API returns an object directly for /alpha/{code}
+                const countryData = data;
                 setCountry(countryData);
 
                 // Fetch border countries if they exist
