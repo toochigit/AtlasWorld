@@ -1,7 +1,7 @@
 /* Header Styles */
 .header {
   background-color: var(--bg-secondary);
-  box-shadow: 0 2px 4px var(--shadow);
+  border-bottom: 2px solid var(--text-primary);
   padding: var(--spacing-md) 0;
   position: sticky;
   top: 0;
@@ -15,8 +15,10 @@
 }
 
 .header h1 {
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* Controls Section */
@@ -39,8 +41,9 @@
 .search-bar {
   background-color: var(--bg-secondary);
   padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--text-primary);
   border-radius: var(--radius-md);
-  box-shadow: 0 2px 8px var(--shadow);
+  box-shadow: var(--shadow);
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
@@ -54,15 +57,17 @@
   background: transparent;
   color: var(--text-primary);
   width: 100%;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-family: var(--font-body);
 }
 
 .search-bar input::placeholder {
   color: var(--text-secondary);
+  font-style: italic;
 }
 
 .search-icon {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-size: 1.2rem;
 }
 
@@ -75,12 +80,13 @@
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--text-primary);
   border-radius: var(--radius-md);
-  box-shadow: 0 2px 8px var(--shadow);
-  border: none;
+  box-shadow: var(--shadow);
   outline: none;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-family: var(--font-body);
   min-width: 200px;
   appearance: none;
   padding-right: 2.5rem;
@@ -94,7 +100,7 @@
   transform: translateY(-50%);
   pointer-events: none;
   color: var(--text-primary);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 /* Country Grid */
@@ -114,23 +120,31 @@
 /* Country Card */
 .country-card {
   background-color: var(--bg-secondary);
+  border: 2px solid var(--text-primary);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 2px 8px var(--shadow);
+  box-shadow: var(--shadow);
   transition: var(--transition);
   cursor: pointer;
   display: block;
 }
 
 .country-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px var(--shadow);
+  transform: translateY(-4px) translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--text-primary);
 }
 
 .country-card-flag {
   width: 100%;
   height: 160px;
   object-fit: cover;
+  border-bottom: 2px solid var(--text-primary);
+  filter: sepia(20%);
+  transition: filter 0.3s ease;
+}
+
+.country-card:hover .country-card-flag {
+  filter: sepia(0%);
 }
 
 .country-card-body {
@@ -138,13 +152,14 @@
 }
 
 .country-card-title {
-  font-size: 1.2rem;
-  font-weight: 800;
+  font-size: 1.4rem;
+  font-weight: 700;
   margin-bottom: var(--spacing-sm);
+  font-family: var(--font-heading);
 }
 
 .country-card-info {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
@@ -153,7 +168,8 @@
 }
 
 .country-card-info strong {
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--text-secondary);
 }
 
 
@@ -169,16 +185,20 @@
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   padding: var(--spacing-sm) var(--spacing-lg);
+  border: 2px solid var(--text-primary);
   border-radius: var(--radius-md);
-  box-shadow: 0 2px 8px var(--shadow);
+  box-shadow: var(--shadow);
   transition: var(--transition);
   margin-bottom: var(--spacing-xl);
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .back-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow);
+  transform: translateY(-2px) translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--text-primary);
 }
 
 .details-content {
@@ -199,14 +219,17 @@
   width: 100%;
   max-width: 560px;
   height: auto;
+  border: 4px solid var(--text-primary);
   border-radius: var(--radius-md);
-  box-shadow: 0 4px 16px var(--shadow);
+  box-shadow: var(--shadow);
+  filter: sepia(10%);
 }
 
 .details-info h2 {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: var(--spacing-md);
+  font-family: var(--font-heading);
 }
 
 .details-columns {
@@ -224,11 +247,12 @@
 
 .details-column p {
   margin: 0.5rem 0;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
 }
 
 .details-column strong {
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--text-secondary);
 }
 
 .border-countries {
@@ -236,9 +260,10 @@
 }
 
 .border-countries h3 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: var(--spacing-sm);
+  font-family: var(--font-heading);
 }
 
 .border-buttons {
@@ -251,15 +276,17 @@
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   padding: var(--spacing-xs) var(--spacing-md);
+  border: 1px solid var(--text-primary);
   border-radius: var(--radius-sm);
-  box-shadow: 0 2px 4px var(--shadow);
+  box-shadow: 2px 2px 0px rgba(44, 24, 16, 0.1);
   transition: var(--transition);
   font-size: 0.9rem;
 }
 
 .border-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--shadow);
+  transform: translateY(-1px);
+  box-shadow: 1px 1px 0px var(--text-primary);
+  background-color: var(--bg-primary);
 }
 
 /* Theme Toggle */
@@ -270,14 +297,17 @@
   background-color: transparent;
   color: var(--text-primary);
   padding: var(--spacing-xs) var(--spacing-sm);
+  border: 2px solid var(--text-primary);
   border-radius: var(--radius-md);
   transition: var(--transition);
   font-weight: 600;
   font-size: 0.95rem;
+  cursor: pointer;
 }
 
 .theme-toggle:hover {
-  opacity: 0.8;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 .theme-icon {
@@ -290,31 +320,36 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
+  border: 2px solid transparent;
   border-radius: var(--radius-md);
   background-color: transparent;
   transition: var(--transition);
   text-decoration: none;
   color: var(--text-primary);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-family: var(--font-heading);
 }
 
 .favorites-link:hover {
-  opacity: 0.8;
+  border-color: var(--text-primary);
+  background-color: rgba(44, 24, 16, 0.05);
 }
 
 .favorites-badge {
-  background-color: #e74c3c;
+  background-color: var(--accent);
   color: white;
   border-radius: 50%;
+  /* Keep badge round for classic look */
   min-width: 1.5rem;
   height: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: bold;
   padding: 0 0.3rem;
+  border: 1px solid var(--bg-primary);
 }
 
 /* Favorite Button */
@@ -341,31 +376,39 @@
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 50%;
+  background-color: var(--bg-primary);
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-sm);
+  /* Square button */
   width: 2.5rem;
   height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 2px 0px var(--text-primary);
   padding: 0;
 }
 
+.country-card-wrapper .favorite-button:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--text-primary);
+}
+
 [data-theme="dark"] .country-card-wrapper .favorite-button {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--bg-secondary);
 }
 
 /* Large favorite button for details page */
 .favorite-button-large {
   font-size: 2rem;
   background-color: var(--bg-secondary);
+  border: 2px solid var(--text-primary);
   border-radius: var(--radius-md);
-  box-shadow: 0 2px 8px var(--shadow);
+  box-shadow: var(--shadow);
   padding: 0.5rem 1rem;
 }
 
 .favorite-button-large:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 4px 12px var(--shadow);
+  transform: translateY(-2px) translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--text-primary);
 }
