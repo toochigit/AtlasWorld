@@ -13,7 +13,7 @@ function CountryDetails() {
         setLoading(true);
         setError(null);
 
-        fetch(`https://restcountries.com/v3.1/alpha/${code}`)
+        fetch(`https://restcountries.com/v3.1/alpha/${code}?fields=name,capital,population,region,subregion,flags,cca3,tld,currencies,languages,borders`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Country not found');
@@ -26,7 +26,7 @@ function CountryDetails() {
                 // Fetch border countries if they exist
                 if (data[0].borders && data[0].borders.length > 0) {
                     const borderCodes = data[0].borders.join(',');
-                    return fetch(`https://restcountries.com/v3.1/alpha?codes=${borderCodes}`);
+                    return fetch(`https://restcountries.com/v3.1/alpha?codes=${borderCodes}&fields=name,cca3`);
                 }
                 return null;
             })

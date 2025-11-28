@@ -12,7 +12,7 @@ function Home() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('https://restcountries.com/v3.1/all')
+        fetch('https://restcountries.com/v3.1/all?fields=name,capital,population,region,flags,cca3')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch countries');
