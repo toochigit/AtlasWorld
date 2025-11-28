@@ -37,7 +37,9 @@ function CountryDetails() {
                 return [];
             })
             .then((borderData) => {
-                setBorderCountries(borderData);
+                // Ensure borderData is always an array
+                const borders = Array.isArray(borderData) ? borderData : [borderData];
+                setBorderCountries(borders.filter(Boolean)); // Filter out any null/undefined
                 setLoading(false);
             })
             .catch((err) => {
