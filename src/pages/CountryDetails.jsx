@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import FavoriteButton from '../components/FavoriteButton';
 
 function CountryDetails() {
     const { code } = useParams();
@@ -82,7 +83,7 @@ function CountryDetails() {
 
     return (
         <div className="container country-details">
-            <div style={{ display: 'flex', gap: '1rem', marginBottom: '3rem' }}>
+            <div style={{ display: 'flex', gap: '1rem', marginBottom: '3rem', alignItems: 'center' }}>
                 <button className="back-button" onClick={() => navigate(-1)} style={{ marginBottom: 0 }}>
                     <span>←</span>
                     <span>Back</span>
@@ -91,6 +92,7 @@ function CountryDetails() {
                     <span>🏠</span>
                     <span>Home</span>
                 </Link>
+                <FavoriteButton country={country} large={true} />
             </div>
 
             <div className="details-content">
