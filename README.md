@@ -26,11 +26,12 @@
 - **Badge de compteur** : Visualisez le nombre de favoris dans le header
 - **Persistance** : Vos favoris sont sauvegardés localement (localStorage)
 
-### 🎨 Interface Moderne
-- **Mode sombre** : Basculez entre thème clair et sombre
+### 🎨 Interface "Vintage Explorer"
+- **Thème Carte au Trésor** : Design unique inspiré des cartes anciennes et parchemins
+- **Mode sombre** : Basculez entre le mode "Jour" (Parchemin) et "Nuit" (Bois sombre)
+- **Typographie** : Polices *Cinzel* et *Crimson Text* pour une immersion totale
 - **Design responsive** : Optimisé pour mobile, tablette et desktop
-- **Animations fluides** : Transitions et effets au survol
-- **UX soignée** : Interface intuitive et agréable
+- **UX soignée** : Animations fluides et interactions satisfaisantes
 
 ## 🚀 Démarrage Rapide
 
