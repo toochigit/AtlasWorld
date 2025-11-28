@@ -21,11 +21,16 @@ function CountryDetails() {
                 return response.json();
             })
             .then((data) => {
-                setCountry(data[0]);
+                if (!data || data.length === 0) {
+                    throw new Error('No data received for this country');
+                }
+
+                const countryData = data[0];
+                setCountry(countryData);
 
                 // Fetch border countries if they exist
-                if (data[0].borders && data[0].borders.length > 0) {
-                    const borderCodes = data[0].borders.join(',');
+                if (countryData.borders && countryData.borders.length > 0) {
+                    const borderCodes = countryData.borders.join(',');
                     return fetch(`https://restcountries.com/v3.1/alpha?codes=${borderCodes}&fields=name,cca3`);
                 }
                 return null;
