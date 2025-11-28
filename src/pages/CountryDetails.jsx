@@ -60,9 +60,9 @@ function CountryDetails() {
         return <div className="error">Country not found</div>;
     }
 
-    const nativeName = country.name.nativeName
+    const nativeName = country.name?.nativeName
         ? Object.values(country.name.nativeName)[0]?.common
-        : country.name.common;
+        : country.name?.common || 'N/A';
 
     const currencies = country.currencies
         ? Object.values(country.currencies)
