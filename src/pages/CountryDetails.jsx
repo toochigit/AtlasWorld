@@ -82,10 +82,16 @@ function CountryDetails() {
 
     return (
         <div className="container country-details">
-            <button className="back-button" onClick={() => navigate(-1)}>
-                <span>←</span>
-                <span>Back</span>
-            </button>
+            <div style={{ display: 'flex', gap: '1rem', marginBottom: '3rem' }}>
+                <button className="back-button" onClick={() => navigate(-1)} style={{ marginBottom: 0 }}>
+                    <span>←</span>
+                    <span>Back</span>
+                </button>
+                <Link to="/" className="back-button" style={{ marginBottom: 0, textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+                    <span>🏠</span>
+                    <span>Home</span>
+                </Link>
+            </div>
 
             <div className="details-content">
                 <img
