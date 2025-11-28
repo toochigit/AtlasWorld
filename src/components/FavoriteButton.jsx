@@ -17,7 +17,7 @@ function FavoriteButton({ country, large = false }) {
             aria-label={favorite ? "Remove from favorites" : "Add to favorites"}
             title={favorite ? "Remove from favorites" : "Add to favorites"}
         >
-            {favorite ? '❤️' : '🤍'}
+            {favorite ? '★' : '☆'}
         </button>
     );
 }

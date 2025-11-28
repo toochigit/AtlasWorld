@@ -13,7 +13,7 @@ function Header({ theme, toggleTheme }) {
                 </Link>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                     <Link to="/favorites" className="favorites-link">
-                        <span>❤️ Favorites</span>
+                        <span>★ Favorites</span>
                         {favorites.length > 0 && (
                             <span className="favorites-badge">{favorites.length}</span>
                         )}
